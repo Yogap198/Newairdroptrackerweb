@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Airdrop Tracker</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Airdrop Tracker</h1>
+    
+    <button onclick="toggleTheme()">🌙 Toggle Dark/Light</button>
+
+    <div class="form">
+      <input type="text" id="project" placeholder="Project"/>
+      <select id="kategori">
+        <option value="">Kategori</option>
+        <option>Quest</option>
+        <option>Retro</option>
+        <option>Depin</option>
+        <option>Tesnet</option>
+        <option>Paste</option>
+        <option>Mini Apps</option>
+        <option>Exchange</option>
+        <option>Other</option>
+      </select>
+      <input type="date" id="tanggal"/>
+      <input type="text" id="status" placeholder="Status"/>
+      <input type="text" id="wallet" placeholder="Wallet"/>
+      <input type="text" id="source" placeholder="Source / Link"/>
+      <input type="number" id="reward" placeholder="Reward ($)"/>
+      <input type="number" id="cost" placeholder="Cost ($)"/>
+      <input type="text" id="note" placeholder="Note"/>
+      <button onclick="addData()">Tambah</button>
+    </div>
+
+    <h2>Data Airdrop</h2>
+    <table id="airdropTable">
+      <thead>
+        <tr>
+          <th>Project</th>
+          <th>Kategori</th>
+          <th>Tanggal</th>
+          <th>Status</th>
+          <th>Wallet</th>
+          <th>Source</th>
+          <th>Reward</th>
+          <th>Cost</th>
+          <th>Net</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>Rekap Bulanan</h2>
+    <canvas id="monthlyChart"></canvas>
+
+    <h3>Rekap Pendapatan Bulanan (Net)</h3>
+    <p id="monthlyIncome">$0.00</p>
+
+    <h2>Rekap Tahunan</h2>
+    <canvas id="yearlyChart"></canvas>
+
+    <h3>Rekap Pendapatan Tahunan (Net)</h3>
+    <p id="yearlyIncome">$0.00</p>
+
+    <button onclick="exportToExcel()">📥 Export Excel</button>
+    <button onclick="exportToPDF()">📄 Export PDF</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Script terpisah -->
+  <script src="script.js"></script>
+  <script src="chart.js"></script>
+  <script src="export.js"></script>
+</body>
+</html>
